@@ -1,4 +1,4 @@
-import { app, BrowserWindow, shell, ipcMain } from 'electron'
+import { app, BrowserWindow, shell, ipcMain, globalShortcut } from 'electron'
 import { createRequire } from 'node:module'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
@@ -81,7 +81,14 @@ async function createWindow() {
   update(win)
 }
 
-app.whenReady().then(createWindow)
+app.whenReady().then(() => {
+  // createWindow()
+
+  globalShortcut.register('Command+1', () => {
+    console.log('start command')
+    createWindow()
+  })
+})
 
 app.on('window-all-closed', () => {
   win = null
