@@ -20,7 +20,10 @@
     "e2e": "playwright test"
   },
   "dependencies": {
-    "electron-updater": "^6.1.8"
+    "electron-updater": "^6.1.8",
+    "less": "^4.2.0",
+    "mitt": "^3.0.1",
+    "node-screenshots": "0.1.9"
   },
   "devDependencies": {
     "@playwright/test": "^1.42.1",
